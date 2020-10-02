@@ -142,12 +142,13 @@ public class SozlarController {
 
     @PostMapping("/admin/{id}/soz-edit")
     public String sozEdit(@PathVariable(value = "id") long id,@RequestParam String togri, @RequestParam String notogri, @RequestParam String misol){
-        Sozlar sozlar=sozlarRepository.findById(id).orElseThrow();
-        sozlar.setSoz_togri(togri);
-        sozlar.setSoz_xato(notogri);
-        sozlar.setMisol(misol);
+//        Sozlar sozlar=sozlarRepository.findById(id).orElseThrow();
+        Optional<Sozlar> sozlar=sozlarRepository.findById(id);
+        sozlar.get().setSoz_togri(togri);
+        sozlar.get().setSoz_xato(notogri);
+        sozlar.get().setMisol(misol);
 
-        sozlarRepository.save(sozlar);
+        sozlarRepository.save(sozlar.get());
         return "redirect:/admin/soz-home?page="+(int)id/20;
     }
 
