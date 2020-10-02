@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class BolimController {
 
@@ -55,9 +57,10 @@ public class BolimController {
     @GetMapping("/admin/bolim-details/bolim-edit")
     @PostMapping("/admin/bolim-details/bolim-edit")
     public String bolimedit(@RequestParam long id, Model model, @RequestParam(defaultValue = "") String mavzu){
-        Bolimlar bolimlar=bolimRepository.findById(id).orElseThrow();
-        bolimlar.setNomi(mavzu);
-        bolimRepository.save(bolimlar);
+//        Bolimlar bolimlar=bolimRepository.findById(id).orElseThrow();
+        Optional<Bolimlar> bolimlar=bolimRepository.findById(id);
+        bolimlar.get().setNomi(mavzu);
+        bolimRepository.save(bolimlar.get());
         model.addAttribute("mavzular", bolimRepository.findAll());
 
         return "redirect:/admin/bolim-details";
