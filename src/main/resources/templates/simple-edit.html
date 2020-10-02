@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="text-center">Savol ma'lumotlarini tahrirlash</h1>
+<div th:each="t: ${tests}" class="text-center p-4">
+    <form method="post" class="pl-3 pr-3 text-center row">
+
+        <label for="savol" class="col-1 mt-3">Savol:</label>
+        <textarea th:text="${t.savol}"  name="savol" id="savol"  placeholder="savol" class="form-control col-11">
+
+        </textarea>
+<!--        <input type="text" th:value="${t.savol}"  name="savol" id="savol"  placeholder="savol" class="form-control">-->
+        <label for="v1"  class="col-1 mt-2">Variant 1:</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text" th:value="${t.v1}"  name="v1" id="v1"  placeholder="Variant" class="form-control col-11">
+
+        <label for="v2" class="col-1 mt-2">Variant 2:</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text" th:value="${t.v2}" name="v2" id="v2"  placeholder="Variant" class="form-control col-11">
+
+        <label for="v3" class="col-1 mt-2">Variant 3:</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text" th:value="${t.v3}" name="v3" id="v3" placeholder="Variant" class="form-control col-11">
+
+        <label for="v4t" class="col-1 mt-2">VariantT:</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text" th:value="${t.v4t}" name="v4t" id="v4t" placeholder="To'g'ri variant" class="form-control col-11">
+
+        <label for="qiyinlik_darajasi" class="col-1 mt-2">Qiyinlik:</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="number" th:value="${t.qiyinlik_darajasi}" name="qiyinlik_darajasi" id="qiyinlik_darajasi" placeholder="Qiyinlik darajasi" class="form-control col-11">
+
+        <label for="vaqt_qiyinlik_darajasi" class="col-1 mt-2">VQiyinlik:</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="number" th:value="${t.vaqt_qiyinlik_darajasi}" name="vaqt_qiyinlik_darajasi" id="vaqt_qiyinlik_darajasi" placeholder="Vaqtning qiyinlik darajasi" class="form-control col-11">
+
+        <label for="misol" class="col-1 mt-3">Misol:</label>
+        <textarea  th:text="${t.misol}"  name="misol" id="misol"  placeholder="misol" class="form-control col-11">
+
+        </textarea>
+
+        <label for="izoh" class="col-1 mt-3">Izoh:</label>
+        <textarea  th:text="${t.izoh}"  name="izoh" id="izoh"  placeholder="izoh" class="form-control col-11">
+
+        </textarea>
+
+
+
+        <label for="bolim" class="col-1 mt-2">Bo'lim:</label>
+            <select th:switch="${t.bolim}" class="col-11" id="bolim" name="bolim" onchange="" >
+
+
+                    <option th:case="''">Mavzuni tanlang:</option>
+                    <option th:case="null">Mavzuni tanlang:</option>
+                    <option th:case="*" th:value="${t.bolim}" th:text="${t.bolim}" >Turni tanlang:</option>
+                <option th:each="b: ${bolimlar}" th:value="${b.nomi}" th:text="${b.nomi}"></option>
+                <!--            <option value="NORTS ">North/South</option>-->
+                <!--            <option value="WOLZA">Wolski Zajazd</option>-->
+            </select>
+
+
+<!--        <label>Test turi-->
+<!--            <input th:value="${t.bolim}" class="w-100 m-2 form-control" required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" list="bolimlar" name="bolimlar" placeholder="Test turi"/></label>-->
+<!--        <datalist id="bolimlar" th:each="b:${bolimlar}">-->
+<!--            <option th:value="b" th:text="b"></option>-->
+<!--            &lt;!&ndash;            <option value="Chrome">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <option value="Firefox">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <option value="Internet Explorer">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <option value="Opera">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <option value="Safari">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <option value="Microsoft Edge">&ndash;&gt;-->
+<!--        </datalist>-->
+
+<!--        <div class="text-center d-flex justify-content-center">-->
+            <button type="submit" class="btn btn-success mt-2" style="margin-left: 45%!important;">Yangilash</button>
+<!--        </div>-->
+    </form>
+</div>
+<script th:inline="javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+
+</body>
+</html>

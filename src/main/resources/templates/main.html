@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link type="text/css" href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+<!--    <link rel="stylesheet" href="../static/css/style.css">-->
+</head>
+<body onload="getname()">
+<header class="card-header text-center header">
+    <p>
+    <p class="float-left" id="un"></p>
+        Tepa qism (Menyular va yana nimalardir)
+        <span class="float-right">
+
+            <a href="/user" id="kabinet" style="display: none" class="btn-lg float-right btn-success btn-group">
+                Kabinet
+            </a>
+        </span>
+    </p>
+</header>
+
+<!--<h1  id="un">-->
+
+<!--</h1>-->
+
+<main class="container text-center d-flex justify-content-center d-flex main">
+<!--    <div class="mt-5 pt-5 row d-flex justify-content-center">-->
+<!--        <a class="btn btn-success btn-lg col-12 m-4" href="/admin/simple-home">Oddiy test</a>-->
+<!--        <a class="btn btn-success btn-lg col-12 m-4" href="/admin/soz-home">So'zlar</a>-->
+<!--        <a class="btn btn-success btn-lg col-12 m-4" href="/admin/bolim-details">Mavzular</a>-->
+<!--    </div>-->
+
+<div class="" >
+
+    <p>Nimalardir yoziladi</p>
+
+    <p>Yana nimalardir yoziladi</p>
+
+    <div class="row" id="btns">
+        <a href="/test" class="col btn btn-success btn-lg m-4">Testlar</a>
+        <a href="/ratings" id="ratings" class="col btn btn-success btn-lg m-4">Reyting</a>
+<!--        <a class="col btn btn-success btn-lg m-4">Kirish</a>-->
+    </div>
+
+</div>
+
+</main>
+
+<footer class="card-footer text-center align-bottom footer" style="position: fixed; bottom: 0; width: 100%">
+    Past qism
+</footer>
+
+</body>
+<script th:inline="javascript" th:src="@{/js/apiTest.js}" src="../static/js/apiTest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

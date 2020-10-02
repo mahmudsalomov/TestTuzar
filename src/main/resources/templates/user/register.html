@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="d-flex justify-content-center">
+
+
+
+<form th:preload="none"  class="row h-75 text-center w-25 mt-5 border p-3 shadow-lg" style="background-color: #a7a7a7" id="card">
+    <h6 class="text-center col-12 position-relative" id="resError" style="color: red"></h6>
+    <label class="col-12">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" placeholder="username" id="username" name="username" type="text">
+    </label>
+
+    <label class="col-12">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" placeholder="firstName" id="firstName" name="firstName" type="text">
+    </label>
+
+    <label class="col-12">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" placeholder="lastName" id="lastName" name="lastName" type="text">
+    </label>
+
+    <label class="col-12">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" placeholder="email" id="email" name="email" type="email">
+    </label>
+
+    <label class="col-12">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" placeholder="password" id="password" name="password" type="password">
+    </label>
+
+<!--    <label class="col-12">-->
+<!--        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" placeholder="confrimPassword" id="confrimPassword" name="confrimPassword" type="password">-->
+<!--    </label>-->
+
+    <div class="col-12">
+        <button class="btn btn-success" onclick="addUser()" type="submit" id="submit">Submit</button>
+    </div>
+    <a class="col-12" href="/login">Kirish</a>
+</form>
+
+<!--<script th:inline="javascript" th:src="@{/js/register.js}" src="../static/js/register.js"></script>-->
+<!--<script th:inline="javascript" th:src="@{/js/registerAxios.js}" src="../static/js/registerAxios.js"></script>-->
+<script th:inline="javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+<script th:inline="javascript" th:src="@{/js/register.js}" src="../static/js/register.js"></script>
+<!--<script th:inline="javascript" th:src="@{/js/customLib.js}" src="../static/js/customLib.js"></script>-->
+<!--<script th:inline="javascript" th:src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

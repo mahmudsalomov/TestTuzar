@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+
+<section class="">
+    <div class="card container-fluid text-center" style="background-color: rgba(0, 0, 0, 0)">
+
+        <div class="card-header text-center">
+            <h3>
+                <a class="btn btn-success" style="float: left" href="/admin">Kabinet</a>
+                So'zlar
+                <a class="btn btn-success" style="float: right" href="/admin/soz-add">Yangi qo'shish</a>
+            </h3>
+
+        </div>
+
+        <div class="">
+            <form class="row w-75 ml-1" action="/admin/soz-home" >
+                <input th:value="${keyword}" id="keyword" name="keyword" type="text" placeholder="Search" class="form-control col-2">
+                <button type="submit" class="btn btn-success col-1">Search</button>
+            </form>
+        </div>
+
+        <div class="card-body text-center" >
+            <div class="d-flex justify-content-center">
+                <form class="row" action="/admin/soz-home">
+                    <div th:if="${keyword!=''}">
+                        <input th:value="${keyword}" name="keyword" type="hidden">
+                    </div>
+
+                    <div th:each="p: ${pageCount}">
+
+                        <button name="page" th:value="${p}" th:text="${p}" class="col btn btn-success">0</button>
+                    </div>
+
+
+
+                </form>
+            </div>
+            <table class="table text-center">
+                <tr class="text-center">
+                    <th>id</th>
+                    <th>To'g'ri yozilishi</th>
+                    <th>Noto'g'ri yozilishi</th>
+                    <th>Misol</th>
+                    <th>Tahrirlash</th>
+
+                </tr>
+                <tr class="text-center" th:each="s: ${sozlar}">
+                    <td th:text="${s.id}"></td>
+                    <td><p th:text="${s.soz_togri}"></p></td>
+                    <td><p th:text="${s.soz_xato}"></p></td>
+                    <td><p th:text="${s.misol}"  style="position: relative;
+    background-color: #f1f1f1;
+    width: 400px;
+    margin-left: 18%;
+    /*height: 200px;*/
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;"></p></td>
+                    <td><a th:href="'/admin/'+${s.id}+'/soz-edit'" class="btn btn-success">Tahrirlash</a></td>
+
+                </tr>
+            </table>
+            <div class="d-flex justify-content-center">
+                <form class="row" action="/admin/soz-home">
+
+                    <div th:if="${keyword!=''}">
+                        <input th:value="${keyword}" name="keyword" type="hidden">
+                    </div>
+
+                    <div th:each="p: ${pageCount}">
+
+                        <button name="page" th:value="${p}" th:text="${p}" class="col btn btn-success">0</button>
+                    </div>
+<!--<script th:inline="javascript">-->
+<!--    var currentPage=document.getElementById("currentPage").value;-->
+<!--    var pageCount=document.getElementById("pageCount").value;-->
+<!--    for (var i=0; i<pageCount; i++){-->
+<!--        if (i===pageCount){-->
+<!--            document.getElementById(i).style.backgroundColor="white";-->
+<!--        }-->
+<!--        else {-->
+
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+<script th:inline="javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+
+</body>
+</html>

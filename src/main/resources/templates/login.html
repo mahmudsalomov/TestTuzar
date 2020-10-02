@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Iltimos kiring</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/style.css" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+    <link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="">
+<div class="container text-center w-50 mt-4 d-flex justify-content-center">
+    <form class="form-signin p-3 shadow mt-4" style="border: black!important;" method="post" action="/login">
+        <h2 class="form-signin-heading">Iltimos kiring</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+        </p>
+        <button class="btn btn-success" type="submit">Kirish</button>
+        <h6 style="font-weight: lighter" class="mt-2">Yangimisiz? Unda ro'yhatdan o'ting</h6>
+        <a href="/register" style="font-weight: bold">Ro'yhatdan o'tish</a>
+    </form>
+</div>
+</body>
+</html>

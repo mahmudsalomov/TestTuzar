@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<section class="h-100" >
+    <div class="card h-100 container-fluid">
+
+        <div class="card-header text-center">
+            <h3>
+                <a class="btn btn-success" style="float: left" href="/admin">Kabinet</a>
+                Mavzular
+            </h3>
+
+        </div>
+
+        <div class="card-body" >
+
+            <table class="table">
+                <tr class="">
+                    <td>
+                        Yangi mavzu qo'shish:
+                    </td>
+
+                    <form action="/admin/bolim-details/add">
+                        <td>
+                            <input class="form-control" id="newmavzu" name="newmavzu"  type="text" placeholder="Mavzu nomini kiriting">
+
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-success" style="float: right">Yangi qo'shish</button>
+                        </td>
+                    </form>
+
+
+                </tr>
+
+                <tr class="">
+                    <th>id</th>
+                    <th>Nomi</th>
+                </tr>
+                <tr th:each="m: ${mavzular}">
+                    <form action="/admin/bolim-details/bolim-edit">
+                        <td th:text="${m.id}"></td>
+                        <input type="hidden" th:value="${m.id}" name="id">
+
+
+                        <td>
+
+                            <input th:value="${m.nomi}" name="mavzu" id="mavzu" class="form-control">
+
+                        </td>
+
+                        <td>
+                            <button type="submit" class="btn btn-success">Yangilash</button>
+                            <a th:href="'/admin/bolim-details/'+${m.id}+'/remove'" type="submit" class="btn btn-danger">O'chirish</a>
+                        </td>
+
+                    </form>
+
+                    <td>
+<!--                        <form action="/bolim-details/remove">-->
+<!--                            <input type="hidden" th:value="${m.id}" name="id">-->
+<!--                            <a th:href="'/blog-details/'+${m.id}+'/remove'" type="submit" class="btn btn-danger">O'chirish</a>-->
+<!--                        </form>-->
+                    </td>
+
+
+
+
+
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<script th:inline="javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.btn{
+    color: white !important;
+}
+
+.p{
+    background-color: #f1f1f1;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+html,body { height: 100%; margin: 0; padding: 0; }
+body{
+    background-color: rgba(198, 198, 198, 0.55) !important;
+}
+.card{
+    /*background-color: white !important;*/
+    background-color: rgba(198, 198, 198, 0.55) !important;
+}
+input{
+    /*background-color: #eeeeee !important;*/
+}
+textarea{
+    /*background-color: #eeeeee !important;*/
+}
+
+
+.cat{
+    color: black;!important;
+}
+
+/*.main{*/
+/*    background: #ffffff; height: 70%!important;*/
+/*}*/
+
+/*.header{*/
+/*    background: #939393; height: 10%!important;*/
+/*}*/
+
+/*.footer{*/
+/*    background: #939393; height: 10%!important;*/
+/*}*/

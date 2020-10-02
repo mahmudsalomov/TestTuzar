@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<section class="container text-center">
+
+    <div>
+        <h2 class="text-center">
+            Savol ma'lumotlarini kiriting:
+        </h2>
+    </div>
+    <form class="p-2" action="/admin/simple-add" method="post">
+<!--        <input class="form-control m-2" name="ism" id="ism" type="text" placeholder="ism">-->
+<!--        <input class="form-control m-2" name="familiya" id="familiya" type="text" placeholder="familiya">-->
+<!--        <input class="form-control m-2" name="kurs" id="kurs" type="text" placeholder="kurs">-->
+<!--        <input class="form-control m-2" name="yosh" id="yosh" type="text" placeholder="yoshi">-->
+<textarea id="savol" name="savol" class="form-control m-2" placeholder="savol">
+</textarea>
+        <!--            <input type="text"  name="savol" id="savol"  placeholder="savol" class="m-2 form-control">-->
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text"  name="v1" id="v1"  placeholder="Variant 1" class="m-2 form-control">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text"  name="v2" id="v2"  placeholder="Variant 2" class="m-2 form-control">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text"  name="v3" id="v3" placeholder="Variant 3" class="m-2 form-control">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text"  name="v4t" id="v4t" placeholder="To'g'ri variant" class="m-2 form-control">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="number" name="qiyinlik_darajasi" id="qiyinlik_darajasi" placeholder="Qiyinlik darajasi" class="m-2 form-control">
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="number"  name="vaqt_qiyinlik_darajasi" id="vaqt_qiyinlik_darajasi" placeholder="Vaqtning qiyinlik darajasi" class="m-2 form-control">
+        <textarea id="misol" name="misol" class="form-control m-2" placeholder="Misol">
+</textarea>
+        <textarea id="izoh" name="izoh" class="form-control m-2" placeholder="Izoh">
+</textarea>
+
+<!--        <label>-->
+<!--            <input class="w-100 m-2 form-control" required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" list="bolim" name="bolim" placeholder="Test turi"/></label>-->
+<!--        <datalist id="bolim" th:each="b:${bolimlar}">-->
+<!--            <span th:value="b" th:text="b"></span>-->
+<!--&lt;!&ndash;            <option value="Chrome">&ndash;&gt;-->
+<!--&lt;!&ndash;            <option value="Firefox">&ndash;&gt;-->
+<!--&lt;!&ndash;            <option value="Internet Explorer">&ndash;&gt;-->
+<!--&lt;!&ndash;            <option value="Opera">&ndash;&gt;-->
+<!--&lt;!&ndash;            <option value="Safari">&ndash;&gt;-->
+<!--&lt;!&ndash;            <option value="Microsoft Edge">&ndash;&gt;-->
+<!--        </datalist>-->
+
+
+<!--        <label for="bolim"></label>-->
+            <select class="col-12 ml-2 mr-2" id="bolim" name="bolim" onchange="" >
+                <option value="">Mavzuni tanlang:</option>
+                <option th:each="b: ${bolimlar}" th:value="${b.nomi}" th:text="${b.nomi}"></option>
+                <!--            <option value="NORTS ">North/South</option>-->
+                <!--            <option value="WOLZA">Wolski Zajazd</option>-->
+            </select>
+
+
+
+
+        <button type="submit" class="btn btn-success m-2">Qoʻshish</button>
+<!--        <input class="input-group" type="text">-->
+    </form>
+</section>
+<script th:inline="javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+
+</body>
+</html>

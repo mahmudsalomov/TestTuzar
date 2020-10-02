@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="getRatings()">
+
+<main>
+    <a class="btn btn-success float-left" href="/">Bosh sahifa</a>
+
+    <div id="root">
+
+        <div class="d-flex justify-content-center">
+            <table id="table" class="table row d-flex justify-content-center">
+
+<!--                <tr>-->
+<!--                    <th>Username</th>-->
+<!--                    <th>Ochko</th>-->
+<!--                </tr>-->
+<!--                <div id="a">-->
+<!--                    <tr class="col-8">-->
+<!--                        <td>Mahmud Salomov</td>-->
+<!--                        <td>6</td>-->
+<!--                    </tr>-->
+<!--                </div>-->
+
+            </table>
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+<script th:inline="javascript" th:src="@{/js/apiTest.js}" src="../../static/js/apiTest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

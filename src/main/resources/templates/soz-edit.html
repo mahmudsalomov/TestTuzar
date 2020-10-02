@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body >
+
+<h1 class="text-center mt-5">So'zlarni tahrirlash</h1>
+<div th:each="s: ${sozlar}" class="text-center p-4">
+    <form method="post" class="p-2">
+
+<!--        <input type="hidden" th:value="${s.id}" name="id" id="id">-->
+        <label for="togri" class="mt-2 float-left">To'g'ri so'z</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text" th:value="${s.soz_togri}"  name="togri" id="togri"  placeholder="To'g'ri yozilishi" class="form-control">
+
+        <label for="notogri" class="mt-4 float-left">Noto'g'ri so'z</label>
+        <input required="required" oninput="InvalidMsg(this)" oninvalid="InvalidMsg(this)" type="text" th:value="${s.soz_xato}" name="notogri" id="notogri"  placeholder="Noto'g'ri yozilishi" class="form-control">
+
+        <label for="misol" class="mt-4 float-left">Misol</label>
+        <textarea  type="text" th:text="${s.misol}" name="misol" id="misol"  placeholder="Misol" class="form-control"></textarea>
+        <button type="submit" class="btn btn-success mt-5">Yangilash</button>
+    </form>
+</div>
+
+<script th:inline="javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+
+</body>
+</html>
