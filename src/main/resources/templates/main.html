@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" media="all"
       href="../css/style.css" th:href="@{/css/style.css}" />
 <link rel="stylesheet" type="text/css" media="all"
-      href="../css/style.css" th:href="@{/css/bootstrap.min.css}" />
+      href="../static/css/style.css" th:href="@{/css/bootstrap.min.css}" />
 <link type="text/css" href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
       rel="stylesheet">
 <head>
@@ -14,7 +14,7 @@
 <!--    <link rel="stylesheet" href="../static/css/style.css">-->
 </head>
 <body onload="getname()">
-<header class="card-header text-center header">
+<header class="pb-4 pt-4 card-header text-center header">
     <p>
     <p class="float-left" id="un"></p>
         Tepa qism (Menyular va yana nimalardir)
@@ -31,7 +31,7 @@
 
 <!--</h1>-->
 
-<main class="container text-center d-flex justify-content-center d-flex main">
+<main style="" class="container text-center d-flex justify-content-center d-flex main middle">
 <!--    <div class="mt-5 pt-5 row d-flex justify-content-center">-->
 <!--        <a class="btn btn-success btn-lg col-12 m-4" href="/admin/simple-home">Oddiy test</a>-->
 <!--        <a class="btn btn-success btn-lg col-12 m-4" href="/admin/soz-home">So'zlar</a>-->
@@ -45,7 +45,7 @@
     <p>Yana nimalardir yoziladi</p>
 
     <div class="row" id="btns">
-        <a href="/test" class="col btn btn-success btn-lg m-4">Testlar</a>
+        <a href="/test" class="col btn btn-success btn-lg m-4 border">Testlar</a>
         <a href="/ratings" id="ratings" class="col btn btn-success btn-lg m-4">Reyting</a>
 <!--        <a class="col btn btn-success btn-lg m-4">Kirish</a>-->
     </div>
@@ -54,7 +54,7 @@
 
 </main>
 
-<footer class="card-footer text-center align-bottom footer" style="position: fixed; bottom: 0; width: 100%">
+<footer class="pt-4 pb-4 card-footer text-center align-bottom footer" style="position: fixed; bottom: 0; width: 100%">
     Past qism
 </footer>
 
