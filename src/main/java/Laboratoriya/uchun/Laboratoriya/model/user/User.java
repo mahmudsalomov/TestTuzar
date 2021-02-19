@@ -23,4 +23,16 @@ public class User {
     private Long rating;
     private Long testTime;
 
+    public String getUsername() {
+        return username;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getRole() {
+        return role;
+    }
 }
